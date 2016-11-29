@@ -1,0 +1,21 @@
+class square{
+public:
+	char element_type;
+	int loc_x, loc_y;
+	bool visited;
+	square();
+	square(char, int, int);
+};
+
+square::square(){
+	element_type = wall;
+}
+square::square(char c, int x, int y){
+	if(c == '#') element_type = wall;
+	else if(c == '.') element_type = space;
+	else if(c == 'o') element_type = source;
+	else if(c == '*') element_type = destination;
+	this->loc_x = x;
+	this->loc_y = y;
+	visited = false;
+}
